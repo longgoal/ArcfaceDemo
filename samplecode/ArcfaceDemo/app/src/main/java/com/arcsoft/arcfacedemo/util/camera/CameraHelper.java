@@ -153,6 +153,7 @@ public class CameraHelper implements Camera.PreviewCallback {
         int result;
         Camera.CameraInfo info = new Camera.CameraInfo();
         Camera.getCameraInfo(mCameraId, info);
+        Log.d(TAG,"CameraInfo face="+info.facing+",orientation="+info.orientation);
         if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
             result = (info.orientation + degrees) % 360;
             result = (360 - result) % 360;
